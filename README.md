@@ -4,7 +4,7 @@
 
 ```mermaid
 flowchart LR
-    U(["🧑‍💻 you<br/><b>“deploy my code to prod”</b>"]) --> C
+    U(["🧑‍💻 you<br/><b>deploy my code to prod</b>"]) --> C
 
     subgraph BRAIN["🧠 Claude + FlyMy.AI MCP"]
         C["reads your repo<br/>detects stack · port · needs a DB?"]
@@ -12,7 +12,7 @@ flowchart LR
 
     C -->|one MCP call| CLOUD
 
-    subgraph CLOUD["☁️ FlyMy.AI cloud — provisions &amp; runs it all, itself"]
+    subgraph CLOUD["☁️ FlyMy.AI cloud — provisions and runs it all, itself"]
         direction TB
         F["🚀 <b>Fly.io</b><br/>compute + scale"]
         N["🐘 <b>Neon</b><br/>Postgres, auto-wired"]
@@ -21,14 +21,18 @@ flowchart LR
     end
 
     CLOUD --> LIVE(["🌐 <b>live URL</b><br/>your accounts · billed to you"])
-    W -.->|crash at 3am| CALL(["📞 <b>calls your phone</b><br/>“prod is down, wake up”"])
+    W -.->|crash at 3am| PAGE(["📞 <b>calls your phone</b><br/>prod is down, wake up"])
 
     classDef you fill:#0b7285,stroke:#0b7285,color:#fff;
     classDef brain fill:#5f3dc4,stroke:#5f3dc4,color:#fff;
     classDef cloud fill:#1864ab,stroke:#1864ab,color:#fff;
     classDef out fill:#2b8a3e,stroke:#2b8a3e,color:#fff;
-    classDef call fill:#c92a2a,stroke:#c92a2a,color:#fff;
-    class U you; class C brain; class F,N,S,W cloud; class LIVE out; class CALL call;
+    classDef pager fill:#c92a2a,stroke:#c92a2a,color:#fff;
+    class U you;
+    class C brain;
+    class F,N,S,W cloud;
+    class LIVE out;
+    class PAGE pager;
 ```
 
 ## vs a $25/mo Replit subscription
