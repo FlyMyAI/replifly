@@ -44,7 +44,33 @@ flowchart LR
 | Monitoring + error tracking | basic | **Sentry + dashboards, wired in** |
 | Wakes you when it crashes | ❌ | ✅ **an agent calls your phone** |
 | Lock-in | your app lives on Replit | **you own the stack, portable** |
-| Cost | $25/mo + deploy fees | pay-per-use on your own accounts |
+| Cost | $25/mo + metered Agent + deploy fees | pay-per-use on your own accounts |
+
+## 💸 The economics (real 2026 prices)
+
+Two costs to compare: **writing** the code, and **running** it in prod.
+
+### Writing it — Replit meters every generation; Claude is flat
+
+| | Replit Agent | Claude (Code) |
+|---|---|---|
+| Model | metered "effort-based": ~$0.25 a simple change, **"multiple dollars"** for complex tasks | flat subscription: Pro **$20/mo**, Max **$100-200/mo** |
+| A full CRUD app | **$30-50+ to build once** | included — code all day, every project |
+| Included credits | $25/mo (Core) - **gone in 3-4 days** of active building | Max 20x ≈ **240-480 hrs of coding/week** |
+| Overage | **uncapped** - reported **$1,000 in a week**, "$20 from one prompt" | none - interactive coding isn't per-generation billed |
+
+### Running it — you own it, on free/cheap tiers
+
+| | Replit | replifly (your accounts) |
+|---|---|---|
+| Always-on compute | **Reserved VM $20-160/mo** (locked to Replit) | **Fly.io ~$2-5/mo** |
+| Postgres | bundled, metered | **Neon free tier $0** (0.5 GB, 100 CU-hrs) |
+| Error tracking | add-on | **Sentry free tier $0** (5k errors/mo) |
+| **Monthly to run a small prod app** | **~$25-45/mo** + Agent credits | **~$2-5/mo** (free tiers) → ~$10-30 at scale |
+
+**Bottom line: running your app is 4-10x cheaper on your own Fly + Neon + Sentry (~$2-5/mo) than Replit's Reserved-VM hosting (~$25-45/mo)** - and the code that builds it is a flat Claude subscription instead of a metered credit bucket a single app can burn in one sitting. Your stack, your accounts, portable.
+
+> Prices from [replit.com/pricing](https://replit.com/pricing) · [Replit effort-based billing](https://blog.replit.com/effort-based-pricing) · [claude.com/pricing](https://claude.com/pricing) · [fly.io](https://fly.io/docs/about/pricing/) · [neon.com](https://neon.com/pricing) · [sentry.io](https://sentry.io/pricing/) (2026). Replit's exact overage depends on usage; the $1,000/week figure is a reported real case ([The Register](https://www.theregister.com/2025/09/18/replit_agent3_pricing/)).
 
 ## Build it yourself
 
