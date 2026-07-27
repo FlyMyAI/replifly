@@ -1,6 +1,14 @@
 # replifly 🚀
 
+[![part of Build with FlyMy.AI](https://img.shields.io/badge/part%20of-Build%20with%20FlyMy.AI-b6ff3b?style=flat-square&labelColor=0b0d10)](https://github.com/FlyMyAI/build-with-flymyai)
+
 **We killed Replit.** One sentence - *"deploy my code to prod"* - and Claude + the **FlyMy.AI cloud** stand up the whole thing: compute, database, monitoring, and an agent that phones you when it crashes. On **your** accounts, billed to **you**. No subscription, no lock-in.
+
+## How it got built: one prompt in your terminal
+
+<img src="docs/one-prompt.gif" alt="connect the FlyMy.AI MCP, type one prompt, the cloud provisions and hosts it" width="820">
+
+Connect the MCP once, point it at your repo, and the whole stack is provisioned through it - app, database, error tracking and a watcher agent, all on your accounts. (Recreated from [BUILD_LOG.md](BUILD_LOG.md): the real NocoDB deploy, Fly.io + Neon + Sentry, every step through the MCP.)
 
 ```mermaid
 flowchart LR
@@ -88,6 +96,16 @@ Two costs to compare: **writing** the code, and **running** it in prod.
 ## Receipts
 
 Real end-to-end run (deploying [NocoDB](https://github.com/nocodb/nocodb), an open-source Airtable/CRM), every step through the FlyMy.AI MCP - what worked, what we had to fix, real load numbers - is in [BUILD_LOG.md](BUILD_LOG.md).
+
+## Part of Build with FlyMy.AI
+
+replifly is one demo in **[Build with FlyMy.AI](https://github.com/FlyMyAI/build-with-flymyai)** - a series where each app rebuilds a venture-funded product from a single prompt, with Claude as the builder and the FlyMy.AI agentic cloud as the backend, and publishes the real bill. The umbrella repo holds the shared playbook, the agent rules and the other demos:
+
+- [WhisperFly](https://github.com/FlyMyAI/whisperfly) - dictation straight into Notion, ~$0.03 a note
+- **replifly** (you are here) - "deploy my code to prod" on your own accounts
+- [higfly](https://github.com/FlyMyAI/higfly) - cinematic AI video, ~$0.20-0.50 a clip
+
+Want to build your own kill? Start with the [playbook](https://github.com/FlyMyAI/build-with-flymyai/blob/main/PLAYBOOK.md).
 
 ---
 
