@@ -2,7 +2,11 @@
 
 [![part of Build with FlyMy.AI](https://img.shields.io/badge/part%20of-Build%20with%20FlyMy.AI-b6ff3b?style=flat-square&labelColor=0b0d10)](https://github.com/FlyMyAI/build-with-flymyai)
 
-**We killed Replit.** replifly is a working replacement for the deploy button: one sentence - *"deploy my code to prod"* - and the whole stack comes up on **your** accounts, billed to **you**: compute, a database, error tracking, and an agent that phones you when it crashes. It exists because nobody had to build the hard part. The provisioning brain behind it - reading the repo, picking the host, wiring the database, standing up the watcher - was *described in plain text* on [FlyMy.AI](https://flymy.ai/media) and now runs there as agents, in one sitting. No CI to write, no Terraform, no ops rota. That is the real headline: **replacing the core of a $9B product is now an afternoon of typing** - and the same infrastructure is sitting there for whatever you want to rebuild next.
+**We killed Replit.** A working clone of a $9B product, built from ~one prompt on the infra that is live at [flymy.ai/media](https://flymy.ai/media/).
+
+Say *"deploy my code to prod"* once. Up comes the whole stack: compute, a Postgres database, error tracking, and an agent that phones you when it crashes. All on **your** accounts, billed to **you**. No subscription, no lock-in - we never hold your keys.
+
+Nobody wrote a pipeline. FlyMy.AI is text-programmable AI infrastructure: you describe the AI backend in plain words, and it gets built, frozen into an API and hosted for you in minutes. No CI to write, no Terraform, no ops rota.
 
 Here is the whole build, verbatim - paste it into a coding agent with the FlyMy.AI MCP connected:
 
@@ -29,7 +33,7 @@ flowchart LR
 
     C -->|one MCP call| CLOUD
 
-    subgraph CLOUD["☁️ FlyMy.AI cloud — provisions and runs it all, itself"]
+    subgraph CLOUD["☁️ FlyMy.AI cloud - provisions and runs it all, itself"]
         direction TB
         F["🚀 <b>Fly.io</b><br/>compute + scale"]
         N["🐘 <b>Neon</b><br/>Postgres, auto-wired"]
@@ -67,16 +71,16 @@ flowchart LR
 
 Two costs to compare: **writing** the code, and **running** it in prod.
 
-### Writing it — Replit meters every generation; Claude is flat
+### Writing it - Replit meters every generation; Claude is flat
 
 | | Replit Agent | Claude (Code) |
 |---|---|---|
 | Model | metered "effort-based": ~$0.25 a simple change, **"multiple dollars"** for complex tasks | flat subscription: Pro **$20/mo**, Max **$100-200/mo** |
-| A full CRUD app | **$30-50+ to build once** | included — code all day, every project |
+| A full CRUD app | **$30-50+ to build once** | included - code all day, every project |
 | Included credits | $25/mo (Core) - **gone in 3-4 days** of active building | Max 20x ≈ **240-480 hrs of coding/week** |
 | Overage | **uncapped** - reported **$1,000 in a week**, "$20 from one prompt" | none - interactive coding isn't per-generation billed |
 
-### Running it — you own it, on free/cheap tiers
+### Running it - you own it, on free/cheap tiers
 
 | | Replit | replifly (your accounts) |
 |---|---|---|
