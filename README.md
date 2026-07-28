@@ -2,7 +2,16 @@
 
 [![part of Build with FlyMy.AI](https://img.shields.io/badge/part%20of-Build%20with%20FlyMy.AI-b6ff3b?style=flat-square&labelColor=0b0d10)](https://github.com/FlyMyAI/build-with-flymyai)
 
-**We killed Replit.** One sentence - *"deploy my code to prod"* - and Claude + the **FlyMy.AI cloud** stand up the whole thing: compute, database, monitoring, and an agent that phones you when it crashes. On **your** accounts, billed to **you**. No subscription, no lock-in.
+**We killed Replit.** replifly is a working replacement for the deploy button: one sentence - *"deploy my code to prod"* - and the whole stack comes up on **your** accounts, billed to **you**: compute, a database, error tracking, and an agent that phones you when it crashes. It exists because nobody had to build the hard part. The provisioning brain behind it - reading the repo, picking the host, wiring the database, standing up the watcher - was *described in plain text* on [FlyMy.AI](https://flymy.ai/media) and now runs there as agents, in one sitting. No CI to write, no Terraform, no ops rota. That is the real headline: **replacing the core of a $9B product is now an afternoon of typing** - and the same infrastructure is sitting there for whatever you want to rebuild next.
+
+Here is the whole build, verbatim - paste it into a coding agent with the FlyMy.AI MCP connected:
+
+```text
+Claude, take this repo and put it in production through FlyMy.AI: pick the
+host, provision a Postgres database, wire error tracking, and create an agent
+that watches the deployment and calls me when it breaks. My accounts, my
+keys. Hand me the live URL. Go.
+```
 
 ## How it got built: one prompt in your terminal
 
